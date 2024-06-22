@@ -1,4 +1,4 @@
-# bevy_decorum
+# 🚧 bevy_decorum
 
 A highly customizable window decoration plugin for the Bevy engine, inspired by [tauri-plugin-decorum](https://github.com/clearlysid/tauri-plugin-decorum).
 
@@ -35,8 +35,15 @@ fn main() {
 }
 ```
 
+## OS support
+
+| os | support |
+| --- | --- |
+| x86_64-pc-windows | 🚧 planned |
+| aarch64-apple-darwin | 🛠️ in progress |
+
 ## Bevy support
 
 | bevy | bevy\_decorum |
 | --- | --- |
-| 0.13 | in progress |
+| 0.13 | 🛠️ in progress |
