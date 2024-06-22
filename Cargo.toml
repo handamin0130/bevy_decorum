@@ -1,0 +1,40 @@
+[package]
+name = "bevy_decorum"
+version = "0.1.0-dev"
+authors = ["Han Damin <handamin0130@gmail.com>"]
+edition = "2021"
+description = "A highly customizable window decoration plugin for the Bevy engine, inspired by tauri-plugin-decorum"
+repository = "https://github.com/handamin0130/bevy_decorum"
+homepage = "https://github.com/handamin0130/bevy_decorum"
+documentation = ""
+keywords = ["bevy", "window", "winit", "decoration"]
+license = "MIT OR Apache-2.0"
+readme = ""
+exclude = []
+
+[features]
+default = ["all"]
+
+all = ["aarch64-apple-darwin"]
+
+x86_64-pc-windows = []
+aarch64-apple-darwin = []
+
+example = [
+  "bevy/bevy_core_pipeline",
+  "bevy/bevy_render",
+  "bevy/bevy_asset",
+  "bevy/bevy_pbr",
+  "bevy/x11",
+  "bevy/tonemapping_luts",
+  "bevy/ktx2",
+  "bevy/zstd",
+]
+
+[dependencies]
+bevy = { version = "0.13.2", default-features = false }
+
+
+[[example]]
+name = "aarch64-apple-darwin"
+required-features = ["aarch64-apple-darwin", "example"]
