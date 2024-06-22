@@ -9,7 +9,7 @@ homepage = "https://github.com/handamin0130/bevy_decorum"
 documentation = ""
 keywords = ["bevy", "window", "winit", "decoration"]
 license = "MIT OR Apache-2.0"
-readme = ""
+readme = "README.md"
 exclude = []
 
 [features]
@@ -33,7 +33,6 @@ example = [
 
 [dependencies]
 bevy = { version = "0.13.2", default-features = false }
-
 
 [[example]]
 name = "aarch64-apple-darwin"
