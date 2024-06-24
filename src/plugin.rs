@@ -18,7 +18,7 @@ impl Plugin for DecorumPlugin {
 
         #[cfg(target_os = "macos")]
         app.add_systems(
-            Startup,
+            PreStartup,
             crate::decorum_traffic::setup_traffic_light_positioner,
         );
     }
