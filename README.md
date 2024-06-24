@@ -5,10 +5,6 @@
 A highly customizable window decoration plugin for the [Bevy engine](https://bevyengine.org),
 inspired by [tauri-plugin-decorum](https://github.com/clearlysid/tauri-plugin-decorum).
 
-## Features
-
-- [] ...
-
 ## Usage
 
 ### Dependency
