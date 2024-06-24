@@ -68,14 +68,16 @@ pub fn setup_traffic_light_positioner(
         if let RawWindowHandle::AppKit(appkit_handle) = raw_handle_wrapper.window_handle {
             let ns_view_ptr: *mut c_void = appkit_handle.ns_view.as_ptr();
 
-            position_traffic_light(
-                UnsafeWindowHandle(ns_view_ptr),
-                WINDOW_CONTROL_PAD_X,
-                WINDOW_CONTROL_PAD_Y,
-            );
-
             unsafe {
-                let ns_window = ns_view_ptr as id;
+                let ns_view: id = ns_view_ptr as id;
+                let ns_window_ptr = msg_send![ns_view, window];
+                let ns_window = ns_window_ptr as id;
+
+                position_traffic_light(
+                    UnsafeWindowHandle(ns_window_ptr),
+                    WINDOW_CONTROL_PAD_X,
+                    WINDOW_CONTROL_PAD_Y,
+                );
 
                 let current_delegate: id = ns_window.delegate();
 
