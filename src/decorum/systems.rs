@@ -1,11 +1,21 @@
 use super::DecorumSettings;
-use bevy::{prelude::*, window::PrimaryWindow, winit::WinitWindows};
+use bevy::{
+    prelude::*,
+    window::{PrimaryWindow, WindowLevel},
+    winit::WinitWindows,
+};
 
 #[allow(dead_code)]
-pub fn off_decorations(mut windows: Query<&mut Window>) {
-    let mut window = windows.single_mut();
+pub fn off_decorations(mut primary_window: Query<&mut Window, With<PrimaryWindow>>) {
+    let mut primary_window = primary_window.single_mut();
 
-    window.decorations = false;
+    primary_window.decorations = false;
+}
+
+pub fn set_window_level(mut primary_window: Query<&mut Window, With<PrimaryWindow>>) {
+    let mut primary_window = primary_window.single_mut();
+
+    primary_window.window_level = WindowLevel::AlwaysOnTop;
 }
 
 pub fn get_primary_window_id(
