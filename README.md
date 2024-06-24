@@ -17,7 +17,7 @@ Add to `Cargo.toml`:
 
 ```toml
 [dependecies]
-bevy_decorum = "0.1.0-dev"
+bevy_decorum = { version = "0.1.0-dev", git = "https://github.com/handamin0130/bevy_decorum" }
 ```
 
 ### System setup
@@ -31,8 +31,19 @@ use bevy_decorum::prelude::*;
 fn main() {
     let mut app = App::new();
 
-    app.add_plugins(DefaultPlugins)
-       .add_plugins(DecorumPlugin::default());
+    app.add_plugins(DefaultPlugins.set(WindowPlugin {
+        primary_window: Some(Window {
+            transparent: true,
+            #[cfg(target_os = "macos")]
+            composite_alpha_mode: CompositeAlphaMode::PostMultiplied,
+            ..Default::default()
+        }),
+        ..Default::default()
+    }));
+
+    app.add_plugins(DecorumPlugin::default());
+
+    // your code
 
     app.run();
 }
