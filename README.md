@@ -38,15 +38,15 @@ fn main() {
 }
 ```
 
-## OS support
+## Bevy Support
 
-| os | support |
-| --- | --- |
-| x86_64-pc-windows | 🚧 planned |
-| aarch64-apple-darwin | 🛠️ in progress |
-
-## Bevy support
-
-| bevy | bevy\_decorum |
+| bevy | bevy\_decorum | 
 | --- | --- |
 | 0.13 | 🛠️ in progress |
+
+## OS Support
+
+| os | version |
+| --- | --- |
+| windows | planned |
+| macos | * |

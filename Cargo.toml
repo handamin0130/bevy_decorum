@@ -1,24 +1,19 @@
 [package]
 name = "bevy_decorum"
-version = "0.1.0-dev"
+version = "0.1.0-beta"
 authors = ["Han Damin <handamin0130@gmail.com>"]
 edition = "2021"
 description = "A highly customizable window decoration plugin for the Bevy engine, inspired by tauri-plugin-decorum"
 repository = "https://github.com/handamin0130/bevy_decorum"
 homepage = "https://github.com/handamin0130/bevy_decorum"
 documentation = ""
-keywords = ["bevy", "window", "winit", "decoration"]
+keywords = ["bevy", "window", "decoration"]
 license = "MIT OR Apache-2.0"
 readme = "README.md"
 exclude = []
 
 [features]
-default = ["all"]
-
-all = ["aarch64-apple-darwin"]
-
-x86_64-pc-windows = []
-aarch64-apple-darwin = []
+default = ["bevy/bevy_ui"]
 
 example = [
   "bevy/bevy_core_pipeline",
@@ -33,7 +28,12 @@ example = [
 
 [dependencies]
 bevy = { version = "0.13.2", default-features = false }
+cocoa = { version = "0.25.0" }
+objc = { version = "0.2.7" }
+rand = { version = "0.8.5" }
+raw-window-handle = { version = "0.6.0" }
+winit = { version = "0.29.15" }
 
 [[example]]
-name = "aarch64-apple-darwin"
-required-features = ["aarch64-apple-darwin", "example"]
+name = "macos"
+required-features = ["example"]
