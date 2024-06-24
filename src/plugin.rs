@@ -14,11 +14,11 @@ impl Plugin for DecorumPlugin {
         app.init_resource::<crate::decorum::Decorum>()
             .init_resource::<crate::decorum::DecorumSettings>();
 
-        app.add_systems(Startup, crate::decorum::get_primary_window_id);
+        app.add_systems(PreStartup, crate::decorum::get_primary_window);
 
         #[cfg(target_os = "macos")]
         app.add_systems(
-            PreUpdate,
+            Startup,
             crate::decorum_traffic::setup_traffic_light_positioner,
         );
     }

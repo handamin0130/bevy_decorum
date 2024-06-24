@@ -31,8 +31,12 @@ bevy = { version = "0.13.2", default-features = false }
 cocoa = { version = "0.25.0" }
 objc = { version = "0.2.7" }
 rand = { version = "0.8.5" }
+
 raw-window-handle = { version = "0.6.0" }
-winit = { version = "0.29.15" }
+winit = { version = "0.29", features = ["rwh_06"] }
+accesskit_winit = { version = "0.17", default-features = false, features = [
+  "rwh_06",
+] }
 
 [[example]]
 name = "macos"

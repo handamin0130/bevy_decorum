@@ -1,7 +1,6 @@
 mod systems;
 
 use bevy::prelude::*;
-use winit::window::WindowId;
 
 pub use systems::*;
 
@@ -16,5 +15,5 @@ impl Decorum {}
 /// Decorum Settings
 #[derive(Resource, Default)]
 pub struct DecorumSettings {
-    pub primary_window_id: Option<WindowId>,
+    pub windows: Vec<Entity>,
 }
