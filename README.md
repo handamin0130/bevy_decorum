@@ -10,7 +10,8 @@
 A highly customizable window decoration plugin for the [Bevy engine](https://bevyengine.org),
 inspired by [tauri-plugin-decorum](https://github.com/clearlysid/tauri-plugin-decorum).
 
-> [!WARNING]  
+## WARNING
+
 > This library is EXPERIMENTAL.
 
 ## Usage
@@ -21,7 +22,7 @@ Add to `Cargo.toml`:
 
 ```toml
 [dependecies]
-bevy_decorum = { version = "0.0.1" }
+bevy_decorum = { version = "0.0.2" }
 ```
 
 ### System setup
@@ -49,7 +50,7 @@ fn main() {
 
 | bevy | bevy\_decorum |
 | ---: | --- |
-| 0.13.2 | 0.0.1 |
+| 0.13.2 | 0.0.1 - 0.0.2 |
 
 ## Licensing
 
