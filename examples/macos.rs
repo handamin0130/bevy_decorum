@@ -1,20 +1,12 @@
 //! A simple example on macOS (aarch64-apple-darwin)
 
-use bevy::{prelude::*, window::CompositeAlphaMode};
+use bevy::prelude::*;
 use bevy_decorum::prelude::*;
 
 fn main() {
     let mut app = App::new();
 
-    app.add_plugins(DefaultPlugins.set(WindowPlugin {
-        primary_window: Some(Window {
-            transparent: true,
-            #[cfg(target_os = "macos")]
-            composite_alpha_mode: CompositeAlphaMode::PostMultiplied,
-            ..Default::default()
-        }),
-        ..Default::default()
-    }));
+    app.add_plugins(DefaultPlugins);
 
     app.add_plugins(DecorumPlugin::default());
 

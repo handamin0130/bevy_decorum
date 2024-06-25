@@ -36,5 +36,3 @@ pub mod prelude {
         plugin::DecorumPlugin,
     };
 }
-
-// => Decorum

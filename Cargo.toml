@@ -1,12 +1,11 @@
 [package]
 name = "bevy_decorum"
-version = "0.1.0-beta"
+version = "0.0.1"
 authors = ["Han Damin <handamin0130@gmail.com>"]
 edition = "2021"
 description = "A highly customizable window decoration plugin for the Bevy engine, inspired by tauri-plugin-decorum"
 repository = "https://github.com/handamin0130/bevy_decorum"
 homepage = "https://github.com/handamin0130/bevy_decorum"
-documentation = ""
 keywords = ["bevy", "window", "decoration"]
 license = "MIT OR Apache-2.0"
 readme = "README.md"

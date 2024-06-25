@@ -5,8 +5,6 @@ use bevy::prelude::*;
 pub use systems::*;
 
 /// Decorum APIs
-///
-///
 #[derive(Resource, Default)]
 pub struct Decorum {}
 
