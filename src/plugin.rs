@@ -1,7 +1,18 @@
 use bevy::prelude::*;
 
-#[derive(Debug, Clone, Default)]
-pub struct DecorumPlugin {}
+use crate::decorum::WindowDecorum;
+
+pub struct DecorumPlugin {
+    pub primary_window_decorum: Option<WindowDecorum>,
+}
+
+impl Default for DecorumPlugin {
+    fn default() -> Self {
+        DecorumPlugin {
+            primary_window_decorum: Some(WindowDecorum::default()),
+        }
+    }
+}
 
 impl DecorumPlugin {
     pub fn new() -> Self {
@@ -11,15 +22,9 @@ impl DecorumPlugin {
 
 impl Plugin for DecorumPlugin {
     fn build(&self, app: &mut App) {
-        app.init_resource::<crate::decorum::Decorum>()
-            .init_resource::<crate::decorum::DecorumSettings>();
-
-        app.add_systems(PreStartup, crate::decorum::get_primary_window);
-
         #[cfg(target_os = "macos")]
-        app.add_systems(
-            PreStartup,
-            crate::decorum_traffic::setup_traffic_light_positioner,
-        );
+        {
+            app.add_systems(PreStartup, crate::traffic::setup_traffic_light_positioner);
+        }
     }
 }

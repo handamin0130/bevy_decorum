@@ -73,11 +73,11 @@ pub fn setup_traffic_light_positioner(
                 let ns_window_ptr = msg_send![ns_view, window];
                 let ns_window = ns_window_ptr as id;
 
-                ns_window.setTitlebarAppearsTransparent_(true);
-                ns_window.setStyleMask_(
-                    ns_window.styleMask()
-                        | cocoa::appkit::NSWindowStyleMask::NSFullSizeContentViewWindowMask,
-                );
+                // ns_window.setTitlebarAppearsTransparent_(true);
+                // ns_window.setStyleMask_(
+                //     ns_window.styleMask()
+                //         | cocoa::appkit::NSWindowStyleMask::NSFullSizeContentViewWindowMask,
+                // );
 
                 position_traffic_light(
                     UnsafeWindowHandle(ns_window_ptr),

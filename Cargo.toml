@@ -7,37 +7,44 @@ description = "A highly customizable window decoration plugin for the Bevy engin
 repository = "https://github.com/handamin0130/bevy_decorum"
 homepage = "https://github.com/handamin0130/bevy_decorum"
 documentation = "https://docs.rs/crate/bevy_decorum"
-keywords = ["bevy", "window", "decoration"]
+keywords = ["bevy", "decoration", "winit", "window"]
 license = "MIT OR Apache-2.0"
 readme = "README.md"
 exclude = []
 
 [features]
-default = ["bevy/bevy_ui"]
-
-example = [
-  "bevy/bevy_core_pipeline",
-  "bevy/bevy_render",
-  "bevy/bevy_asset",
-  "bevy/bevy_pbr",
-  "bevy/x11",
-  "bevy/tonemapping_luts",
-  "bevy/ktx2",
-  "bevy/zstd",
-]
+default = []
 
 [dependencies]
-bevy = { version = "0.13.2", default-features = false }
 cocoa = { version = "0.25.0" }
 objc = { version = "0.2.7" }
 rand = { version = "0.8.5" }
-
 raw-window-handle = { version = "0.6.0" }
 winit = { version = "0.29", features = ["rwh_06"] }
 accesskit_winit = { version = "0.17", default-features = false, features = [
   "rwh_06",
 ] }
 
+[dependencies.bevy]
+version = "0.13.2"
+default-features = false
+features = ["bevy_ui"]
+
+[dev-dependencies.bevy]
+version = "0.13.2"
+default-features = false
+features = [
+  "bevy_asset",
+  "bevy_core_pipeline",
+  "bevy_pbr",
+  "bevy_render",
+  "bevy_ui",
+  "x11",
+  "tonemapping_luts",
+  "ktx2",
+  "zstd",
+]
+
+
 [[example]]
 name = "macos"
-required-features = ["example"]
